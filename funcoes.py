@@ -1,13 +1,13 @@
 def define_posicoes(linha, coluna, orientacao, tamanho):
-  posição = []
+  posição = [linha, coluna]
   if orientacao == 'vertical':
-    i = 0
+    i = 1
     while i!=tamanho:
       linha +=1
       posição.append([linha, coluna])
       i+=1
   else:
-    i = 0
+    i = 1
     while i!=tamanho:
       coluna +=1
       posição.append([linha, coluna])
