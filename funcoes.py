@@ -17,7 +17,11 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
   return x
 
 def preenche_frota(frota, nome_navio, linha, coluna, orientacao, tamanho):
-  frota[nome_navio] = []
-  position = define_posicoes(linha, coluna, orientacao, tamanho)
-  frota[nome_navio] += position
+  if nome_navio in frota:
+    position = define_posicoes(linha, coluna, orientacao, tamanho) + frota[nome_navio]
+    frota[nome_navio] = position
+  else:
+    frota[nome_navio] = []
+    position = define_posicoes(linha, coluna, orientacao, tamanho) + frota[nome_navio]
+    frota[nome_navio] = position
   return frota
