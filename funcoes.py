@@ -50,3 +50,19 @@ def posiciona_frota(frota):
                 grid[x][y] = 1
                 
     return grid
+
+# Exercício 5
+def afundados(frota, tabuleiro):
+    mortos = 0
+    for chave, valor in frota.items():
+        for i in valor:
+            lista_posicoes_mortas = []
+            for j in i:
+                x, y = j
+                if tabuleiro[x][y] == 'X':
+                    lista_posicoes_mortas.append(j)
+                    if i == lista_posicoes_mortas:
+                        mortos +=1
+                else:
+                    continue
+    return mortos
