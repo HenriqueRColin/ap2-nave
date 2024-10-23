@@ -35,3 +35,18 @@ def faz_jogada(tabuleiro, linha, coluna):
   else:
     tabuleiro[linha][coluna] = '-'
   return tabuleiro
+
+# Exercício 4
+def posiciona_frota(frota):
+    # Inicializa um tabuleiro 10x10 com 0s
+    grid = [[0 for _ in range(10)] for _ in range(10)]
+    
+    # Percorre o dicionário de navios
+    for navio, posicoes in frota.items():
+        for posicao in posicoes:
+            for coordenada in posicao:
+                x, y = coordenada
+                # Preenche o grid com 1 onde há navios
+                grid[x][y] = 1
+                
+    return grid
